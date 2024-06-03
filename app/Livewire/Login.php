@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 

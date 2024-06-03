@@ -1,7 +1,7 @@
 <div>
 <button wire:navigate  href="/customers/create" class="btn btn-success sm">Create</button>
 <livewire:flash-message/>
-<table class="table">
+<table class="table table-sm">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -27,4 +27,5 @@
         @endforeach
     </tbody>
 </table>
+{{$customers->links()}}
 </div>

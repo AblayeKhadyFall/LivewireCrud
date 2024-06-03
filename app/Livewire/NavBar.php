@@ -12,7 +12,6 @@ class NavBar extends Component
         return view('livewire.nav-bar');
     }
     public function logout(Request $request){
-        dd('loggin out');
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
