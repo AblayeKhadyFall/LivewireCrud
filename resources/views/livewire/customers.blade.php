@@ -1,5 +1,11 @@
 <div>
+    <div class="row">
+        <div class="col-auto">
+
+       
 <button wire:navigate  href="/customers/create" class="btn btn-success sm">Create</button>
+</div>
+</div>
 <livewire:flash-message/>
 <table class="table table-sm">
     <thead>
