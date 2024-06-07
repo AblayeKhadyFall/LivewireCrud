@@ -12,12 +12,11 @@ Route::get('/', function () {
 });
 Route::middleware('auth')->group(function(){
     Route::get('/customers/create',CreateCustomers::class);
-    Route::get('/customers',Customers::class);
+    Route::get('/customers', Customers::class);
     Route::get('/customers/{customer}',ViewCustomer::class);
     Route::get('/customers/{customer}/edit',EditCustomer::class);
 
 });
-
 
 Route::get('/register',Register::class);
 Route::get('/login',Login::class)->name('login');

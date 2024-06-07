@@ -9,20 +9,22 @@ use Livewire\WithPagination;
 class Customers extends Component
 {
     use WithPagination;
-    protected $paginatiomTheme='bootstrap';
-   // public $customers = [];
-    public $search;
+
+    protected $paginationTheme='bootstrap';
+
+    public $customers=[];
+    public $search='';
     
     public function render()
     {
         if(! $this->search){
-            $customers=Customer::paginate(10);
+            $customers=Customer::all();
         }
         else{
-            $customers=Customer::where('name','like','%'.$this->search."");
+            $customers=Customer::where('name','like','%'.$this->search.'%')->get();
         }
         return view('livewire.customers',[
-            'customers'=>$customers,
+            'customers'=>$customers
         ]);
     }
     public function deletecustomer(Customer $customer){
