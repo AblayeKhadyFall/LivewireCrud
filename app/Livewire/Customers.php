@@ -12,16 +12,16 @@ class Customers extends Component
 
     protected $paginationTheme='bootstrap';
 
-    public $customers=[];
+    //public $customers=[];
     public $search='';
     
     public function render()
     {
         if(! $this->search){
-            $customers=Customer::all();
+            $customers=Customer::paginate(10);
         }
         else{
-            $customers=Customer::where('name','like','%'.$this->search.'%')->get();
+            $customers=Customer::where('name','like','%'.$this->search.'%')->paginate(10);
         }
         return view('livewire.customers',[
             'customers'=>$customers
